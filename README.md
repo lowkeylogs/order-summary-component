@@ -7,5 +7,5 @@ This is a solution to the [Order summary card challenge on Frontend Mentor](http
 
 ### Links
 
-- Solution URL: [Order summary card solution](https://www.frontendmentor.io/)
-- Live Site URL: [https://amgnim.github.io/order-summary-component/](https://www.frontendmentor.io/solutions/order-summary-component-bem-IVhEZBH7IY)
+- Solution URL: [Order summary card solution](https://www.frontendmentor.io/solutions/order-summary-component-bem-IVhEZBH7IY)
+- Live Site URL: [https://amgnim.github.io/order-summary-component/](https://amgnim.github.io/order-summary-component/)
