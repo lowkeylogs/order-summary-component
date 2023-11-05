@@ -102,37 +102,22 @@ body {
 }
 
 .card {
-  text-align: center;
   width: min(100% - 3rem, 28.125rem);
   background-color: hsl(0, 0%, 100%);
+  text-align: center;
   border-radius: 1.25rem;
   box-shadow: 0 2.5rem 2.5rem -1.25rem hsla(228, 87%, 39%, 15.18%);
   transition: box-shadow 200ms linear;
   overflow: hidden;
-  container-type: inline-size;
 }
 
 .card:hover {
-  box-shadow: 0 40px 40px 0px hsla(228, 87%, 39%, 15.18%);
-}
-
-.card > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  box-shadow: 0 2.5rem 2.5rem 0 hsla(228, 87%, 39%, 15.18%);
 }
 
 .card__content {
   --border-radius: 0.75rem;
-  margin-block: 2rem;
-}
-
-.card__content > :not(img) {
-  margin-inline: 1.5rem;
-}
-
-.card__content > :where(:not(:first-child)) {
-  margin-block-start: 1.5rem;
+  padding: 2rem;
 }
 
 .card__heading {
@@ -143,7 +128,7 @@ body {
 }
 
 .card__description {
-  margin-block-start: 1rem;
+  margin-block: 1rem 1.5rem;
 }
 
 .plan {
@@ -159,10 +144,7 @@ body {
   font-size: var(--font-size-300);
   display: flex;
   align-items: center;
-}
-
-.plan__details div:nth-child(2) {
-  margin-inline-start: 1.25rem;
+  gap: 1.25rem;
 }
 
 .plan__details p:first-child {
@@ -180,6 +162,10 @@ body {
 .plan__cta:hover {
   color: var(--color-accent-500);
   text-decoration: none;
+}
+
+.card__actions {
+  margin-block-start: 1.5rem;
 }
 
 .card__actions button:nth-child(2) {
@@ -231,7 +217,7 @@ body {
 
 /* Attribution styles */
 .attribution {
-  font-size: var(--font-size-300);
+  font-size: 0.75rem;
   color: var(--color-neutral-500);
   position: fixed;
   bottom: 0.5rem;
@@ -241,19 +227,25 @@ body {
   color: var(--color-primary-500);
 }
 
-/* Using @container queries to apply the styles when the card component is 450px or wider */
+.attribution a:hover {
+  color: var(--color-accent-500);
+}
 
-@container (min-width: 450px) {
+/* Media queries */
+@media (min-width: 768px) {
+  .wrapper {
+    background: url('./images/pattern-background-desktop.svg') top/contain
+      no-repeat;
+  }
+
+  .attribution {
+    left: 1rem;
+  }
+}
+
+@media (min-width: 1440px) {
   .card__content {
-    margin-block: 3rem;
-  }
-
-  .card__content > :not(img) {
-    margin-inline: 3rem;
-  }
-
-  .card__content > :where(:not(:first-child)) {
-    margin-block-start: 2rem;
+    padding: 3rem;
   }
 
   .card__heading {
@@ -261,26 +253,15 @@ body {
   }
 
   .card__description {
-    margin-block-start: 1.25rem;
-  }
-
-  .plan {
-    margin-block-start: 1.125rem;
+    margin-block: 1.25rem;
   }
 
   .plan__details {
     font-size: var(--font-size-500);
   }
 
+  .card__actions,
   .card__actions button:nth-child(2) {
     margin-block-start: 2rem;
-  }
-}
-
-/* Changing background image based on viewport */
-@media (min-width: 768px) {
-  .wrapper {
-    background: url('./images/pattern-background-desktop.svg') top/contain
-      no-repeat;
   }
 }
