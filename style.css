@@ -1,0 +1,286 @@
+/* Using reset styles based on Josh W. Comeau's Modern CSS Reset (https://www.joshwcomeau.com/css/custom-css-reset/) */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin, padding and font styles
+*/
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+/*
+  Typographic tweaks + setting min-height
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* ==========================================================================================================*/
+
+/* Custom properties */
+:root {
+  --color-primary-100: hsl(225, 100%, 94%);
+  --color-primary-500: hsl(245, 75%, 52%);
+
+  --color-neutral-100: hsl(225, 100%, 98%);
+  --color-neutral-500: hsl(224, 23%, 55%);
+  --color-neutral-900: hsl(223, 47%, 23%);
+
+  --color-accent-500: hsl(245, 83%, 68%);
+
+  --font-size-300: 0.875rem;
+  --font-size-500: 1rem;
+  --font-size-700: 1.375rem;
+  --font-size-800: 1.75rem;
+
+  --font-weight-500: 500;
+  --font-weight-700: 700;
+  --font-weight-900: 900;
+}
+
+/* ==========================================================================================================*/
+
+/* Main component styles */
+body {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: var(--font-size-500);
+  font-weight: var(--font-weight-500);
+  color: var(--color-neutral-500);
+  background-color: var(--color-primary-100);
+}
+
+.wrapper {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  background: url('./images/pattern-background-mobile.svg') no-repeat
+    top/contain;
+}
+
+.card {
+  text-align: center;
+  width: min(100% - 3rem, 28.125rem);
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 1.25rem;
+  box-shadow: 0 2.5rem 2.5rem -1.25rem hsla(228, 87%, 39%, 15.18%);
+  transition: box-shadow 200ms linear;
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+.card:hover {
+  box-shadow: 0 40px 40px 0px hsla(228, 87%, 39%, 15.18%);
+}
+
+.card > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__content {
+  --border-radius: 0.75rem;
+  margin-block: 2rem;
+}
+
+.card__content > :not(img) {
+  margin-inline: 1.5rem;
+}
+
+.card__content > :where(:not(:first-child)) {
+  margin-block-start: 1.5rem;
+}
+
+.card__heading {
+  font-size: var(--font-size-700);
+  font-weight: var(--font-weight-900);
+  color: var(--color-neutral-900);
+  line-height: 1.3;
+}
+
+.card__description {
+  margin-block-start: 1rem;
+}
+
+.plan {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-neutral-100);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+}
+
+.plan__details {
+  font-size: var(--font-size-300);
+  display: flex;
+  align-items: center;
+}
+
+.plan__details div:nth-child(2) {
+  margin-inline-start: 1.25rem;
+}
+
+.plan__details p:first-child {
+  font-weight: var(--font-weight-900);
+  color: var(--color-neutral-900);
+}
+
+.plan__cta {
+  font-size: var(--font-size-300);
+  font-weight: var(--font-weight-700);
+  color: var(--color-primary-500);
+  text-decoration: underline;
+}
+
+.plan__cta:hover {
+  color: var(--color-accent-500);
+  text-decoration: none;
+}
+
+.card__actions button:nth-child(2) {
+  font-weight: var(--font-weight-900);
+  color: var(--color-neutral-500);
+  margin-block-start: 1.5rem;
+}
+
+.card__actions button:nth-child(2):hover {
+  color: var(--color-neutral-900);
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  transition: all 200ms ease;
+}
+
+.button--primary {
+  font-weight: var(--font-weight-900);
+  color: hsl(0, 0%, 100%);
+  background-color: var(--color-primary-500);
+  width: 100%;
+  padding-block: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 1.25rem 1.25rem 0 hsla(245, 75%, 52%, 19%);
+}
+
+.button--primary:hover {
+  background-color: var(--color-accent-500);
+}
+
+.button--secondary {
+  background: transparent;
+}
+
+/* For screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap;
+}
+
+/* Attribution styles */
+.attribution {
+  font-size: var(--font-size-300);
+  color: var(--color-neutral-500);
+  position: fixed;
+  bottom: 0.5rem;
+}
+
+.attribution a {
+  color: var(--color-primary-500);
+}
+
+/* Using @container queries to apply the styles when the card component is 450px or wider */
+
+@container (min-width: 450px) {
+  .card__content {
+    margin-block: 3rem;
+  }
+
+  .card__content > :not(img) {
+    margin-inline: 3rem;
+  }
+
+  .card__content > :where(:not(:first-child)) {
+    margin-block-start: 2rem;
+  }
+
+  .card__heading {
+    font-size: var(--font-size-800);
+  }
+
+  .card__description {
+    margin-block-start: 1.25rem;
+  }
+
+  .plan {
+    margin-block-start: 1.125rem;
+  }
+
+  .plan__details {
+    font-size: var(--font-size-500);
+  }
+
+  .card__actions button:nth-child(2) {
+    margin-block-start: 2rem;
+  }
+}
+
+/* Changing background image based on viewport */
+@media (min-width: 768px) {
+  .wrapper {
+    background: url('./images/pattern-background-desktop.svg') top/contain
+      no-repeat;
+  }
+}

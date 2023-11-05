@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Order summary component</title>
+  </head>
+  <body>
+    <!-- Wrapper for aligning the card to the center -->
+    <div class="wrapper">
+      <!-- Added for accessibility -->
+      <h1 class="sr-only">Order summary card component</h1>
+
+      <!-- Card component -->
+      <main class="card">
+        <img
+          src="./images/illustration-hero.svg"
+          alt="A girl dancing while listening to music"
+        />
+
+        <div class="card__content">
+          <div>
+            <h2 class="card__heading">Order Summary</h2>
+            <p class="card__description">
+              You can now listen to millions of songs, audiobooks, and podcasts
+              on any device anywhere you like!
+            </p>
+          </div>
+
+          <div class="plan">
+            <div class="plan__details">
+              <div>
+                <img src="./images/icon-music.svg" alt="" />
+              </div>
+
+              <div>
+                <p>Annual Plan</p>
+                <p>$59.99/year</p>
+              </div>
+            </div>
+
+            <button class="plan__cta button button--secondary">Change</button>
+          </div>
+
+          <footer class="card__actions">
+            <button class="button button--primary" type="button">
+              Proceed to Payment
+            </button>
+            <button class="button button--secondary" type="button">
+              Cancel Order
+            </button>
+          </footer>
+        </div>
+      </main>
+
+      <!-- Attribution -->
+      <footer class="attribution">
+        <p>
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. Coded by
+          <a href="https://www.github.com/amgnim" target="_blank">Mingma</a>.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
